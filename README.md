@@ -17,6 +17,7 @@ To this day, I have been missing the ability to automatically enable SSH after a
 Information sourced from [this forum thread](https://forum.openwrt.org/t/adding-openwrt-support-for-qnap-qhora-301w/96934/53).
 
 ### Permanently Enabling SSH on Startup
+Everything is based on SW version 2.4.0.190 build 20240522:
 
 To permanently enable SSH after startup:
 
@@ -42,5 +43,10 @@ After the restart, SSH should be permanently enabled.
 > I discovered this method today, so I am not sure how long it will work or if it might get disabled automatically.
 
 Additionally, I executed the following command:
-```bash
-/etc/init.d/dropbear enable
+    ```bash
+    /etc/init.d/dropbear enable
+    ```
+## TODO
+
+1. **Running Node Exporter** - I know how to do it, but I need to add automatic deployment from the local host based on Docker. After a restart, the binary disappears. Another option would be to find the autostart and add the node.
+2. **Finding where and how statistics are sent** - After joining QWAN, we have the option to create our own organization and get access to [QWAN](https://quwan.qnap.com/). There, we have beautiful statistics and other features that are not available locally.
